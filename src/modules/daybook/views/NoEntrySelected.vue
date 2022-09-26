@@ -3,15 +3,23 @@
     <h1 class="align-self-center">None selected</h1>
   </div>
 
-  <Fab />
+  <Fab
+    @fab:click="createNewEntry"
+  />
 </template>
 
 <script>
 import { defineAsyncComponent } from 'vue';
 
 export default {
+  name: 'NoEntrySelected',
   components: {
     Fab: defineAsyncComponent(() => import('@/modules/daybook/components/Fab.vue'))
+  },
+  methods: {
+    createNewEntry() {
+      this.$router.push({name: 'entry', params: { id: 'new' }});
+    }
   }
 };
 </script>
