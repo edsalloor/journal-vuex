@@ -17,5 +17,16 @@ module.exports = {
     'quotes': ['error', 'single'],
     'semi': ['error', 'always'],
     'vue/multi-word-component-names': 'off'
-  }
+  },
+  overrides: [
+    {
+      files: [
+        '**/__tests__/*.{j,t}s?(x)',
+        '**/tests/unit/**/*.spec.{j,t}s?(x)'
+      ],
+      env: {
+        jest: true
+      }
+    }
+  ]
 };
