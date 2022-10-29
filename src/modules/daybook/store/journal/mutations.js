@@ -36,3 +36,7 @@ export const removeEntry = (state, id) => {
     entry.id !== id
   );
 };
+
+export const clearEntries = state => {
+  state.entries = [];
+};
